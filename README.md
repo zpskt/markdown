@@ -25,20 +25,18 @@ Initialization succeeded! Please run docsify serve
 默认在本机http://localhost:3000
 
 src文件夹里会出现README.md文件，md文件被渲染成html内容.
-### 部署项目（nginx）
-
-源码安装nginx
-
-tar zxvf 
-路径地址为/etc/nginx
-新建放网页的目录
-
-    mkdir www && cd www
-把src文件夹放入www里，并改个你喜欢的名字ex:
-
-    mv src simpleWeb
-查看路径
-
-    pwd
-    #：/etc/nginx/www/simpleWeb
+### 安装nginx（略）
+### nginx设置
 修改nginx配置文件
+>        location / {
+>            root   /usr/local/nginx/www/src;#这里是你的文件夹存放地址
+>           index  index.html index.htm;
+>        }
+
+开启nginx
+
+    /usr/local/nginx/sbin/nginx 
+
+重启nginx（修改配置文件后)
+   
+    /usr/local/nginx/sbin/nginx -s reload
